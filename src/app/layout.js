@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import styles from "./styles.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const fingerPaint = localFont({
   src: "./fonts/FingerPaint.ttf",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${fingerPaint.variable} ${imprima.variable} ${inknutAntiqua.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
