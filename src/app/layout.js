@@ -21,9 +21,13 @@ const inknutAntiqua = localFont({
 });
 
 export const metadata = {
-  title: "Lucas Gabriel",
+  title: 'Lucas Gabriel',
   description: "Lucas Gabriel de Lana Rosa - Portfolio",
+  other: {
+    'google-adsense-account': 'ca-pub-3661225205600708',
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (

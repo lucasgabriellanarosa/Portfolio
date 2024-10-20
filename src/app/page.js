@@ -40,6 +40,10 @@ export default function Home() {
           </li>
 
           <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+          </li>
+
+          <li>
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
           </li>
 
