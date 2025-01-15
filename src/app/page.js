@@ -16,7 +16,7 @@ export default function Home() {
 
         <h1 className="text-red-900 font-FasterOne text-4xl">Lucas Gabriel <br /> Web Developer</h1>
 
-        <ul className="grid grid-cols-5 px-8 py-4 gap-2 justify-center items-center bg-cyan-800 w-full">
+        <ul className="grid grid-cols-5 px-8 py-4 gap-2 justify-center items-center bg-emerald-600 w-full">
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
@@ -29,18 +29,21 @@ export default function Home() {
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-plain.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-          </ul>
+        </ul>
 
       </div>
 
-      <div id="about_section">
+      <div id="about_section" className="flex flex-col gap-4 px-8 py-10">
 
         <SectionTitle title="About Me" />
 
-        <section>
-          <p className="font-OpenSans">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know. There I really learned every technology I'm using today: CSS, Javascript and Django. But, above all that, they really taught me how to code. How to solve a problem searching for a solution by my own, getting erros and trying to fix it. Currently I'm on the "Java and Spring Boot" bootcamp from the DIO (Digital Innovation One). My main technology is React, that I learned on Youtube without courses or bootcamps.</p>
+        <section className="bg-emerald-600 flex flex-col gap-4 py-2 px-4">
+          <p className="font-OpenSans text-sm">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know. There I really learned every technology I'm using today: CSS, Javascript and Django. But, above all that, they really taught me how to code. How to solve a problem searching for a solution by my own, getting erros and trying to fix it. Currently I'm on the "Java and Spring Boot" bootcamp from the DIO (Digital Innovation One). My main technology is React, that I learned on Youtube without courses or bootcamps.</p>
 
-          <ResumeBtn />
+          <div className="flex justify-end">
+            <ResumeBtn />
+          </div>
+
         </section>
 
       </div>
