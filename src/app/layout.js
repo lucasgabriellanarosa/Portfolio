@@ -1,14 +1,23 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+const agbalumo = localFont({
+  src: "./fonts/Agbalumo.ttf",
+  variable: "--font-agbalumo",
+  weight: "100 900",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const fasterOne = localFont({
+  src: "./fonts/FasterOne.ttf",
+  variable: "--font-fasterOne",
+  weight: "100 900",
+});
+
+const openSans = localFont({
+  src: "./fonts/OpenSans.ttf",
+  variable: "--font-openSans",
+  weight: "100 900",
 });
 
 export const metadata = {
@@ -20,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${agbalumo.variable} ${fasterOne.variable} ${openSans.variable} antialiased`}
       >
         {children}
       </body>

@@ -5,3 +5,17 @@
 body {
   background-color: #27272a;
 }
+
+@layer utilities {
+  .font-Agbalumo {
+    font-family: var(--font-agbalumo);
+  }
+
+  .font-FasterOne {
+    font-family: var(--font-fasterOne);
+  }
+
+  .font-OpenSans {
+    font-family: var(--font-openSans);
+  }
+}
