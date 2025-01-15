@@ -1,5 +1,6 @@
 import ResumeBtn from "./components/ResumeBtn";
 import SectionTitle from "./components/SectionTitle";
+import SkillContainer from "./components/SkillContainer";
 
 export default function Home() {
   return (
@@ -11,21 +12,24 @@ export default function Home() {
         <ResumeBtn />
       </header>
 
-      <div>
+      <div className="pt-72 pb-10 flex flex-col justify-center items-center gap-40">
 
-        <h1 className="text-red-900 font-FasterOne">Lucas Gabriel <br /> Web Developer</h1>
+        <h1 className="text-red-900 font-FasterOne text-4xl">Lucas Gabriel <br /> Web Developer</h1>
 
-        <ul>
-          <li>
-            <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-          </li>
-          <li>
-            <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-          </li>
-          <li>
-            <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-          </li>
-        </ul>
+        <ul className="grid grid-cols-5 px-8 py-4 gap-2 justify-center items-center bg-cyan-800 w-full">
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-plain.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+          </ul>
 
       </div>
 
@@ -37,7 +41,7 @@ export default function Home() {
           <p className="font-OpenSans">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know. There I really learned every technology I'm using today: CSS, Javascript and Django. But, above all that, they really taught me how to code. How to solve a problem searching for a solution by my own, getting erros and trying to fix it. Currently I'm on the "Java and Spring Boot" bootcamp from the DIO (Digital Innovation One). My main technology is React, that I learned on Youtube without courses or bootcamps.</p>
 
           <ResumeBtn />
-          </section>
+        </section>
 
       </div>
 
@@ -113,7 +117,7 @@ export default function Home() {
             <img src="#" />
 
             <ul>
-              
+
               <li>
                 <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
               </li>
