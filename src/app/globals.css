@@ -10,6 +10,12 @@ body {
   background-color: #27272a;
 }
 
+@layer components {
+  .page_section {
+    @apply flex flex-col gap-4 px-8 py-10;
+  }
+}
+
 @layer utilities {
   .font-Agbalumo {
     font-family: var(--font-agbalumo);
