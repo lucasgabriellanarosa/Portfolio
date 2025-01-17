@@ -3,6 +3,7 @@ import ResumeBtn from "./components/ResumeBtn";
 import SectionTitle from "./components/SectionTitle";
 import SkillContainer from "./components/SkillContainer";
 import ProjectHeader from "./components/ProjectHeader";
+import ProjectImage from "./components/ProjectImage";
 
 export default function Home() {
   return (
@@ -61,6 +62,7 @@ export default function Home() {
             <div className="flex gap-2">
               <Image
                 src="/images/experience/clubedelivery.jpg"
+                alt="ClubeDelivery Logo" 
                 width={50}
                 height={50}
               />
@@ -97,11 +99,11 @@ export default function Home() {
               rep={"https://github.com/lucasgabriellanarosa/WeatherNow"}
             />
 
-            <Image
-                src="/images/projects/weathernow.png"
-                width={50}
-                height={50}
-              />
+            <ProjectImage 
+              src="/images/projects/weathernow.png"
+              alt="WeatherNow Project"
+            />
+
             <ul>
 
               <li>

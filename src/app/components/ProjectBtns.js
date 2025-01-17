@@ -3,7 +3,7 @@
 import { FaGithub } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 
-export default function ResumeBtn({live, rep}) {
+export default function ProjectBtns({live, rep}) {
     return (
     <div className="flex items-center gap-3">
 
