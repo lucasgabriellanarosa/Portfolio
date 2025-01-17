@@ -117,26 +117,26 @@ export default function Home() {
         </ul>
       </div>
 
-      <div className="page_section">
+      <div className="bg-zinc-900 flex flex-col gap-2 px-8 py-4">
 
         <SectionTitle title={"Contacts"} />
 
-        <ul>
+        <p className="text-white font-Agbalumo cursor-pointer">
+            lucas.gabriel.lr2112@gmail.com
+        </p>
 
-          <li className="text-white font-Agbalumo">
-            @lucasgabriellanarosa
+        <ul className="flex justify-between">
+
+          <li className="text-white font-Agbalumo cursor-pointer">
+            <a href="https://www.linkedin.com/in/lucas-rosa-452b59237/" target="_blank">LinkedIn</a>
           </li>
 
-          <li className="text-white font-Agbalumo">
-            @lucasgabriellanarosa
+          <li className="text-white font-Agbalumo cursor-pointer">
+            <a href="https://github.com/lucasgabriellanarosa" target="_blank">Github</a>
           </li>
 
-          <li className="text-white font-Agbalumo">
-            @lucasgabriellanarosa
-          </li>
-
-          <li className="text-white font-Agbalumo">
-            @lucasgabriellanarosa
+          <li className="text-white font-Agbalumo cursor-pointer">
+            <a href="https://www.instagram.com/lucasgabriellanarosa/" target="_blank">Instagram</a>
           </li>
 
         </ul>
