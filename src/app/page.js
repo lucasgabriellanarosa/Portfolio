@@ -2,6 +2,7 @@ import Image from "next/image";
 import ResumeBtn from "./components/ResumeBtn";
 import SectionTitle from "./components/SectionTitle";
 import SkillContainer from "./components/SkillContainer";
+import ProjectHeader from "./components/ProjectHeader";
 
 export default function Home() {
   return (
@@ -88,39 +89,19 @@ export default function Home() {
 
         <ul>
 
-          <li>
-            <div>
-              <h3 className="text-red-900 font-Agbalumo">Anime DB</h3>
-              <button>Live Project</button>
-              <button>Repository</button>
-            </div>
+          <li className="flex flex-col gap-4">
 
-            <img src="#" />
+            <ProjectHeader 
+              title={"Weather Now"}
+              live={"https://weather-now-psi.vercel.app/"}
+              rep={"https://github.com/lucasgabriellanarosa/WeatherNow"}
+            />
 
-            <ul>
-
-              <li>
-                <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-              </li>
-              <li>
-                <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-              </li>
-              <li>
-                <img className="w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-              </li>
-
-            </ul>
-          </li>
-
-          <li>
-            <div>
-              <h3 className="text-red-900 font-Agbalumo">Anime DB</h3>
-              <button>Live Project</button>
-              <button>Repository</button>
-            </div>
-
-            <img src="#" />
-
+            <Image
+                src="/images/projects/weathernow.png"
+                width={50}
+                height={50}
+              />
             <ul>
 
               <li>
