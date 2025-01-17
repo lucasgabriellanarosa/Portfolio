@@ -1,9 +1,12 @@
 "use client"
 
-export default function SkillsContainer({url}) {
+export default function SkillsContainer({url, w}) {
+    
+    const skillClass = "w-" + w
+
     return (
         <li className="flex justify-center items-center">
-            <img className="w-14" src={url} />
+            <img className={skillClass} src={url} />
         </li>
     )
 }
