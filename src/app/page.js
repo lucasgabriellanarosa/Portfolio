@@ -4,6 +4,9 @@ import SectionTitle from "./components/SectionTitle";
 import SkillContainer from "./components/SkillContainer";
 import ProjectHeader from "./components/ProjectHeader";
 import ProjectImage from "./components/ProjectImage";
+import { IoLogoLinkedin } from "react-icons/io";
+import { FaGithub } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
 
 export default function Home() {
   return (
@@ -32,10 +35,11 @@ export default function Home() {
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-plain.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
         </ul>
 
       </div>
-      
+
       <div id="about_section" className="page_section">
 
         <SectionTitle title="About Me" />
@@ -62,7 +66,7 @@ export default function Home() {
             <div className="flex gap-2 justify-center items-center">
               <Image
                 src="/images/experience/clubedelivery.jpg"
-                alt="ClubeDelivery Logo" 
+                alt="ClubeDelivery Logo"
                 width={50}
                 height={50}
               />
@@ -89,30 +93,79 @@ export default function Home() {
       <div id="projects_section" className="page_section">
         <SectionTitle title="Projects" />
 
-        <ul>
+        <ul className="flex flex-col gap-8">
 
           <li className="flex flex-col gap-4">
 
-            <ProjectHeader 
+            <ProjectHeader
+              title={"FakeStore"}
+              live={"https://www.youtube.com/watch?v=G41aHjim8BY"}
+              rep={"https://github.com/lucasgabriellanarosa/FakeStore"}
+            />
+
+            <ProjectImage
+              src="/images/projects/fakestore.png"
+              alt="Fakestore Project"
+            />
+
+            <ul className="flex gap-2 bg-slate-500 justify-center items-center py-1">
+
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+            </ul>
+          </li>
+
+          <li className="flex flex-col gap-4">
+
+            <ProjectHeader
+              title={"Anime App"}
+              live={"https://www.youtube.com/watch?v=1SHbxfKcEhM"}
+              rep={"https://github.com/lucasgabriellanarosa/CS50W-FinalProject"}
+            />
+
+            <ProjectImage
+              src="/images/projects/animeapp.png"
+              alt="AnimeApp Project"
+            />
+
+            <ul className="flex gap-2 bg-slate-500 justify-center items-center py-1">
+
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+
+            </ul>
+          </li>
+
+
+          <li className="flex flex-col gap-4">
+
+            <ProjectHeader
               title={"Weather Now"}
               live={"https://weather-now-psi.vercel.app/"}
               rep={"https://github.com/lucasgabriellanarosa/WeatherNow"}
             />
 
-            <ProjectImage 
+            <ProjectImage
               src="/images/projects/weathernow.png"
               alt="WeatherNow Project"
             />
 
-            <ul className="flex gap-2">
+            <ul className="flex gap-2 bg-slate-500 justify-center items-center py-1">
 
               <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"/>
-              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/>
-              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"/>
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+              <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
 
             </ul>
           </li>
+
 
         </ul>
       </div>
@@ -121,22 +174,22 @@ export default function Home() {
 
         <SectionTitle title={"Contacts"} />
 
-        <p className="text-white font-Agbalumo cursor-pointer">
-            lucas.gabriel.lr2112@gmail.com
+        <p className="text-white text-sm font-OpenSans cursor-pointer">
+          lucas.gabriel.lr2112@gmail.com
         </p>
 
-        <ul className="flex justify-between">
+        <ul className="flex gap-2">
 
-          <li className="text-white font-Agbalumo cursor-pointer">
-            <a href="https://www.linkedin.com/in/lucas-rosa-452b59237/" target="_blank">LinkedIn</a>
+          <li className="text-white font-OpenSans cursor-pointer text-lg">
+            <a href="https://www.linkedin.com/in/lucas-rosa-452b59237/" target="_blank"><IoLogoLinkedin /></a>
           </li>
 
-          <li className="text-white font-Agbalumo cursor-pointer">
-            <a href="https://github.com/lucasgabriellanarosa" target="_blank">Github</a>
+          <li className="text-white font-OpenSans cursor-pointer text-lg">
+            <a href="https://github.com/lucasgabriellanarosa" target="_blank"><FaGithub /></a>
           </li>
 
-          <li className="text-white font-Agbalumo cursor-pointer">
-            <a href="https://www.instagram.com/lucasgabriellanarosa/" target="_blank">Instagram</a>
+          <li className="text-white font-OpenSans cursor-pointer text-lg">
+            <a href="https://www.instagram.com/lucasgabriellanarosa/" target="_blank"><RiInstagramFill /></a>
           </li>
 
         </ul>
