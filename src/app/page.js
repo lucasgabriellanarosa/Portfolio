@@ -12,17 +12,17 @@ export default function Home() {
   return (
     <>
       <header className="bg-zinc-900 fixed w-full flex justify-end items-center px-4 py-2 gap-3">
-        <a href="#about_section" className="text-red-900 font-Agbalumo text-lg">About</a>
-        <a href="#experience_section" className="text-red-900 font-Agbalumo text-lg">Experience</a>
-        <a href="#projects_section" className="text-red-900 font-Agbalumo text-lg">Projects</a>
+        <a href="#about_section" className="text-red-900 font-Agbalumo text-lg md:text-xl">About</a>
+        <a href="#experience_section" className="text-red-900 font-Agbalumo text-lg md:text-xl">Experience</a>
+        <a href="#projects_section" className="text-red-900 font-Agbalumo text-lg md:text-xl">Projects</a>
         <ResumeBtn />
       </header>
 
       <div className="pt-72 pb-10 flex flex-col justify-center items-center gap-40">
 
-        <h1 className="text-red-900 font-FasterOne text-4xl">Lucas Gabriel <br /> Web Developer</h1>
+        <h1 className="text-red-900 font-FasterOne text-4xl md:text-6xl">Lucas Gabriel <br /> Web Developer</h1>
 
-        <ul className="grid grid-cols-5 px-8 py-4 gap-2 justify-center items-center bg-emerald-600 w-full">
+        <ul className="grid grid-cols-[repeat(auto-fit,_minmax(48px,_1fr))] gap-y-4 px-8 py-4 justify-center items-center bg-emerald-600 w-full">
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
