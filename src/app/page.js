@@ -44,7 +44,7 @@ export default function Home() {
 
         <SectionTitle title="About Me" />
 
-        <section className="bg-emerald-600 flex flex-col gap-4 py-2 px-4">
+        <section className="bg-emerald-600 flex flex-col gap-4 py-2 px-4 rounded-lg">
           <p className="font-OpenSans text-xs">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know. There I really learned every technology I'm using today: CSS, Javascript and Django. But, above all that, they really taught me how to code. How to solve a problem searching for a solution by my own, getting erros and trying to fix it. Currently I'm on the "Java and Spring Boot" bootcamp from the DIO (Digital Innovation One). My main technology is React, that I learned on Youtube without courses or bootcamps.</p>
 
           <div className="flex justify-end">
@@ -70,13 +70,13 @@ export default function Home() {
                 width={50}
                 height={50}
               />
-              <div>
+              <div className="w-full">
                 <h3 className="text-red-800 font-Agbalumo text-base">Front End Developer <span className="text-emerald-600">At Club Delivery </span> </h3>
                 <h4 className="text-red-700 font-Agbalumo text-sm">Dezember 2024 - Currently</h4>
               </div>
             </div>
 
-            <div className="bg-emerald-600 flex flex-col items-center justify-center px-4 py-2 gap-3">
+            <div className="bg-emerald-600 flex flex-col items-center justify-center px-4 py-2 gap-3 rounded-lg">
               <p className="font-OpenSans text-xs">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know.
               </p>
               <ul className="flex gap-2">

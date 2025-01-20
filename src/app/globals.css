@@ -13,6 +13,8 @@ body {
 @layer components {
   .page_section {
     @apply flex flex-col gap-4 px-8 py-10;
+    max-width: 1024px;
+    justify-self: center;
   }
 }
 
