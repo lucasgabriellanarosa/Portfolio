@@ -45,7 +45,11 @@ export default function Home() {
         <SectionTitle title="About Me" />
 
         <section className="bg-emerald-600 flex flex-col gap-4 py-2 px-4 rounded-lg">
-          <p className="font-OpenSans text-xs">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know. There I really learned every technology I'm using today: CSS, Javascript and Django. But, above all that, they really taught me how to code. How to solve a problem searching for a solution by my own, getting erros and trying to fix it. Currently I'm on the "Java and Spring Boot" bootcamp from the DIO (Digital Innovation One). My main technology is React, that I learned on Youtube without courses or bootcamps.</p>
+          <p className="font-OpenSans text-xs">I am a web developer passionate about creating efficient and functional solutions. Currently, I work at Clube Delivery as a front end developer and studying a bachelor's degree in Software Engineering at UNINTER. I'm also studying the Harvard's CS50’s Introduction to Databases with SQL.
+
+            My journey in programming began with Professor Gustavo Guanabara’s courses on Curso em Vídeo, where I built a strong foundation in HTML, CSS, and JavaScript. I further deepened my web development knowledge through The Odin Project platform, exploring more concepts and improving my skills with JavaScript and CSS. Later, I completed CS50's Web Programming with Python and JavaScript by Harvard University, where I learned Python, Django, and Bootstrap while reinforcing back-end and API concepts. I added React and Next to my skill set through free content on YouTube.
+
+            In addition to programming, I am studying French and have completed an advanced English course at Fernando Idiomas enhancing my communication skills for international projects.</p>
 
           <div className="flex justify-end">
             <ResumeBtn />
@@ -77,7 +81,13 @@ export default function Home() {
             </div>
 
             <div className="bg-emerald-600 flex flex-col items-center justify-center px-4 py-2 gap-3 rounded-lg">
-              <p className="font-OpenSans text-xs">I'm a web developer looking for my first job oportunity. Both front-end and back-end are fields I'm familiar with. I've been studying web development since 2021 and I've completed some courses during this time. It all started with a Javascript brazilian course from Gustavo Guanabara with his project called Curso em Vídeo, one of the most famous Youtube channels in Brazil. Click here to see his channel. After that, I started both The Odin Project and Harvard's CS50's Web Programming with Python and Javascript. CS50W was my main study and the base of all that I know.
+              <p className="font-OpenSans">
+                <h5>Responsabilities</h5>
+                <ul className="text-sm list-disc px-4">
+                  <li>Creating wireframes and designing website web pages in Figma;</li>
+                  <li>Fixing bugs in codes;</li>
+                  <li>Implementing features;</li>
+                </ul>
               </p>
               <ul className="flex gap-2">
                 <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
