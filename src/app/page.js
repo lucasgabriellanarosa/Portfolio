@@ -36,6 +36,8 @@ export default function Home() {
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-plain.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
           <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+          <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
         </ul>
 
       </div>
@@ -45,11 +47,13 @@ export default function Home() {
         <SectionTitle title="About Me" />
 
         <section className="bg-emerald-600 flex flex-col gap-4 py-2 px-4 rounded-lg">
-          <p className="font-OpenSans text-xs">I am a web developer passionate about creating efficient and functional solutions. Currently, I work at Clube Delivery as a front end developer and studying a bachelor's degree in Software Engineering at UNINTER. I'm also studying the Harvard's CS50’s Introduction to Databases with SQL.
+          <p className="font-OpenSans text-xs">I am a web developer passionate about creating efficient and functional solutions. I worked as a volunteer front end developer at Clube Delivery, where I gained professional experience with Javascript.
 
-            My journey in programming began with Professor Gustavo Guanabara’s courses on Curso em Vídeo, where I built a strong foundation in HTML, CSS, and JavaScript. I further deepened my web development knowledge through The Odin Project platform, exploring more concepts and improving my skills with JavaScript and CSS. Later, I completed CS50's Web Programming with Python and JavaScript by Harvard University, where I learned Python, Django, and Bootstrap while reinforcing back-end and API concepts. I added React and Next to my skill set through free content on YouTube.
+            Currently I am studying a bachelor's degree in Software Engineering at UNINTER and actively looking for a new job opportunity! Furthermore, I have been studying Typescript and reinforcing my Git knowledge by the platform W3Schools.
 
-            In addition to programming, I am studying French and have completed an advanced English course at Fernando Idiomas enhancing my communication skills for international projects.</p>
+            My journey in programming began with Professor Gustavo Guanabara’s courses on Curso em Vídeo, where I built a strong foundation in HTML, CSS, and JavaScript. I further deepened my web development knowledge through The Odin Project platform, exploring more concepts and improving my skills with JavaScript and CSS. Later, I completed CS50's Web Programming with Python and JavaScript by Harvard University, where I learned Python, Django, and Bootstrap while reinforcing back-end and API concepts. I added React and Next to my skill set through free content on YouTube. More recently I've concluded another course from the Harvard University, the CS50's Introduction to Databases with SQL, that gave me experience with SQLite, MySQL and PostgreSQL!
+
+            In addition to programming, I am studying French and have completed an advanced English course at Fernando Idiomas, enhancing my communication skills for international projects.</p>
 
           <div className="flex justify-end">
             <ResumeBtn />
@@ -75,8 +79,8 @@ export default function Home() {
                 height={50}
               />
               <div className="w-full">
-                <h3 className="text-red-800 font-Agbalumo text-base">Front End Developer <span className="text-emerald-600">At Club Delivery </span> </h3>
-                <h4 className="text-red-700 font-Agbalumo text-sm">Dezember 2024 - Currently</h4>
+                <h3 className="text-red-800 font-Agbalumo text-base">Vonluteer Front End Developer <span className="text-emerald-600">At Club Delivery </span> </h3>
+                <h4 className="text-red-700 font-Agbalumo text-sm">Dezember 2024 - February 2025</h4>
               </div>
             </div>
 
@@ -85,13 +89,14 @@ export default function Home() {
                 <h5>Responsabilities</h5>
                 <ul className="text-sm list-disc px-4">
                   <li>Creating wireframes and designing website web pages in Figma;</li>
-                  <li>Fixing bugs in codes;</li>
+                  <li>Reporting bugs and problems in the company main web page;</li>
                   <li>Implementing features;</li>
                 </ul>
               </p>
               <ul className="flex gap-2">
+                <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
                 <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
                 <SkillContainer url="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
               </ul>
             </div>
