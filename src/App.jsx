@@ -40,7 +40,7 @@ function App() {
     <>
       <header>
         <div>
-          <img src="#" />
+          <img src="./images/billybat.png" />
           <h1>Lucas Gabriel L.R</h1>
         </div>
 
@@ -81,6 +81,7 @@ function App() {
         <section>
           <h2>Lucas Gabriel L.R</h2>
           <h3>I am a web developer</h3>
+          <img src="./images/punpun.png" />
         </section>
 
         <section>
