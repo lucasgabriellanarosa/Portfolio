@@ -5,6 +5,8 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { IoDocumentTextOutline, IoHomeOutline } from 'react-icons/io5';
 import { GoPerson } from 'react-icons/go';
 import { CiFolderOn, CiMail } from 'react-icons/ci';
+import { Section } from './components/Section';
+import { NavItem } from './components/NavItem';
 
 function App() {
 
@@ -28,70 +30,49 @@ function App() {
     });
   };
 
-
-
   useEffect(() => {
     fetchData()
   }, [])
 
-
   console.log(data)
+
   return (
-    <>
-      <header>
+    <div className='flex flex-row h-screen'>
+      <header className='flex flex-col items-center justify-between h-screen bg-red-900'>
         <div>
           <img src="./images/billybat.png" />
           <h1>Lucas Gabriel L.R</h1>
         </div>
 
-        <ul>
+        <ul className='flex flex-col gap-4'>
 
-          <li>
-            <IoHomeOutline />
-            <a href="#">Home</a>
-          </li>
-
-          <li>
-            <GoPerson />
-            <a href="#">About</a>
-          </li>
-
-          <li>
-            <IoDocumentTextOutline />
-            <a href="#">Experience</a>
-          </li>
-
-          <li>
-            <CiFolderOn />
-            <a href="#">Projects</a>
-          </li>
-
-          <li>
-            <CiMail />
-            <a href="#">Contacts</a>
-          </li>
+          <NavItem section={"Home"}/>
+          <NavItem section={"About"}/>
+          <NavItem section={"Experience"}/>
+          <NavItem section={"Projects"}/>
+          <NavItem section={"Contacts"}/>
 
         </ul>
 
         <span>Copyright © 2025</span>
 
       </header>
-      <main>
+      <main className='flex-1 h-screen overflow-y-auto'>
 
-        <section>
+        <Section>
           <h2>Lucas Gabriel L.R</h2>
           <h3>I am a web developer</h3>
           <img src="./images/punpun.png" />
-        </section>
+        </Section>
 
-        <section>
+        <Section>
           <h2>About Me</h2>
           <p>{data.about_text}</p>
 
           <button>Resume</button>
-        </section>
+        </Section>
 
-        <section>
+        <Section>
           <h2>Experience</h2>
 
           <div>
@@ -112,9 +93,13 @@ function App() {
                     <div>
                       <h4>Responsabilities</h4>
                       <ul>
-                        {experience.responsabilities.map((responsability, key) => (
+                        { experience.responsabilities > [] ?
+                        experience.responsabilities.map((responsability, key) => (
                           <li key={key}>{responsability}</li>
-                        ))}
+                        ))
+                        :
+                        <></>
+                      }
                       </ul>
                     </div>
                   </li>
@@ -150,10 +135,10 @@ function App() {
               </ul>
             </div>
           </div>
-        </section>
+        </Section>
 
       </main>
-    </>
+    </div>
   )
 }
 
