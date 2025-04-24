@@ -1,1 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oldenburg&family=Orbit&display=swap');
 @import "tailwindcss";
+
+
+@theme {
+    --font-oldenburg: "Oldenburg", serif;
+    --font-orbit: "Orbit", sans-serif;
+
+    --color-textGray: #535353;
+  }

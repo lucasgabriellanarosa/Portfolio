@@ -20,7 +20,7 @@ export const NavItem = ({ section }) => {
         }
     };
     return (
-        <li className='flex flex-row items-center gap-2 text-2xl'>
+        <li className='flex flex-row items-center gap-2 text-xl hover:text-black hover:cursor-pointer'>
             {renderIcon()}
             <a href={section}>{section}</a>
         </li>
