@@ -34,7 +34,7 @@ function App() {
   }, [])
 
   return (
-    <div className='flex flex-row h-screen font-oldenburg'>
+    <div className='flex flex-row h-screen font-oldenburg pb-8'>
 
       <header className='hidden md:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 px-8  text-textGray'>
 
@@ -67,9 +67,9 @@ function App() {
 
         <Section>
           <SectionTitle title={"About Me"} />
-          <p className='text-sm'>{data.about_text}</p>
+          <p className='text-xs'>{data.about_text}</p>
           <div className="w-full flex justify-end">
-            <button className="w-40 border-2 border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400">
+            <button className="w-40 border border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400">
               <FiDownload />
               Resume
             </button>
@@ -82,16 +82,16 @@ function App() {
           <div className='w-full flex flex-col gap-4'>
             <h3 className='text-xl'>Professional</h3>
 
-            <ul className="flex flex-col gap-4 w-fit">
+            <ul className="flex flex-col gap-8 w-fit">
               {data.experience > [] ?
                 data.experience.map((experience, key) => (
-                  <li key={key} className='flex flex-col p-6 justify-center gap-2 border border-gray-500 rounded-xl'>
-                    <div className='flex flex-row gap-8'>
-                      <img className='w-20' src={experience.img} />
-                      <div>
-                        <p className='text-base'>{experience.title} At {experience.company}</p>
-                        <p className='text-base'>{experience.start_date} - {experience.end_date}</p>
-                        <p className='text-sm'>{experience.technologies}</p>
+                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl'>
+                    <div className='flex flex-col gap-4'>
+                      <img className='w-20 h-20 self-center' src={experience.img} />
+                      <div className='flex flex-col gap-2'>
+                        <p className='text-sm md:text-base'>{experience.title} At {experience.company}</p>
+                        <p className='text-xs md:text-base'>{experience.start_date} - {experience.end_date}</p>
+                        <p className='text-xs'>{experience.technologies}</p>
                       </div>
                     </div>
 
@@ -100,7 +100,7 @@ function App() {
                       <ul className='flex flex-col list-disc pl-5'>
                         {experience.responsabilities > [] ?
                           experience.responsabilities.map((responsability, key) => (
-                            <li key={key}>{responsability}</li>
+                            <li className='text-sm' key={key}>{responsability}</li>
                           ))
                           :
                           <></>
@@ -123,7 +123,7 @@ function App() {
               {data.education > [] ?
                 data.education.map((education, key) => (
                   <li key={key} className='flex flex-row p-4 justify-center items-center gap-8 border border-gray-500 rounded-xl'>
-                    <img className='w-20' src={education.img} />
+                    <img className='w-12 h-12' src={education.img} />
                     <div className='text-base'>
                       <p className='text-base'>{education.field} At {education.school}</p>
                       <p>{education.start_date} - {education.end_date}</p>

@@ -1,6 +1,6 @@
 export const Section = ({ children }) => {
   return (
-    <section className="min-h-screen w-2/3 flex flex-col justify-center gap-6">
+    <section className="w-4/5 flex flex-col gap-6 py-12">
       {children}
     </section>
   );
