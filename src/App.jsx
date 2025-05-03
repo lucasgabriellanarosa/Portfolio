@@ -33,11 +33,10 @@ function App() {
     fetchData()
   }, [])
 
-  console.log(data)
-
   return (
     <div className='flex flex-row h-screen font-oldenburg'>
-      <header className='flex flex-col items-center justify-between h-screen bg-gray-100 py-4 px-8  text-textGray'>
+
+      <header className='hidden md:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 px-8  text-textGray'>
 
         <div className='flex flex-col items-center gap-2'>
           <img src="./images/billybat.png" className='w-36' />
@@ -57,11 +56,12 @@ function App() {
         <span className='text-xl'>Copyright © 2025</span>
 
       </header>
-      <main className='flex-1 h-screen overflow-y-auto flex flex-col items-center'>
+
+      <main className='overflow-y-auto flex flex-1 flex-col items-center'>
 
         <Section>
-          <h2 className='text-4xl'>Lucas Gabriel L.R</h2>
-          <h3 className='text-2xl'>I am a web developer</h3>
+          <h2 className='text-2xl md:text-4xl'>Lucas Gabriel L.R</h2>
+          <h3 className='text-xl md:text-2xl'>I am a web developer</h3>
           <img src="./images/punpun.png" />
         </Section>
 
@@ -85,7 +85,7 @@ function App() {
             <ul className="flex flex-col gap-4 w-fit">
               {data.experience > [] ?
                 data.experience.map((experience, key) => (
-                  <li key={key} className='flex flex-col p-6 justify-center gap-2 border-2 border-gray-500 rounded-xl'>
+                  <li key={key} className='flex flex-col p-6 justify-center gap-2 border border-gray-500 rounded-xl'>
                     <div className='flex flex-row gap-8'>
                       <img className='w-20' src={experience.img} />
                       <div>
@@ -117,32 +117,29 @@ function App() {
 
           </div>
 
-          <div>
-            <h3>Education</h3>
-            <div>
-              <ul>
-                {data.education > [] ?
-                  data.education.map((education, key) => (
-                    <li key={key}>
-                      <div>
-                        <img src={education.img} />
-                        <div>
-                          <p>{education.field} At {education.school}</p>
-                          <p>{education.start_date} - {education.end_date}</p>
-                        </div>
-                      </div>
-                    </li>
-                  ))
+          <div className='w-full flex flex-col gap-4'>
+            <h3 className='text-xl'>Education</h3>
+            <ul className='flex flex-col gap-4 w-fit'>
+              {data.education > [] ?
+                data.education.map((education, key) => (
+                  <li key={key} className='flex flex-row p-4 justify-center items-center gap-8 border border-gray-500 rounded-xl'>
+                    <img className='w-20' src={education.img} />
+                    <div className='text-base'>
+                      <p className='text-base'>{education.field} At {education.school}</p>
+                      <p>{education.start_date} - {education.end_date}</p>
+                    </div>
+                  </li>
+                ))
 
-                  :
-                  <></>
-                }
-              </ul>
-            </div>
+                :
+                <></>
+              }
+            </ul>
           </div>
         </Section>
 
       </main>
+
     </div>
   )
 }
