@@ -39,7 +39,7 @@ function App() {
   return (
     <div className='flex flex-row h-screen font-oldenburg pb-8'>
 
-      <header className='hidden md:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 px-8  text-textGray'>
+      <header className='hidden lg:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 px-4  text-textGray'>
 
         <div className='flex flex-col items-center gap-2'>
           <img src="./images/billybat.png" className='w-36' />
@@ -60,19 +60,19 @@ function App() {
 
       </header>
 
-      <main className='overflow-y-auto flex flex-1 flex-col items-center'>
+      <main className='flex flex-col items-center '>
 
-        <Section className="">
-          <h2 className='text-2xl md:text-4xl'>Lucas Gabriel L.R</h2>
-          <h3 className='text-xl md:text-2xl'>I am a web developer</h3>
-          <img src="./images/punpun.png" />
+        <Section>
+          <h2 className='text-2xl md:text-5xl'>Lucas Gabriel L.R</h2>
+          <h3 className='text-xl md:text-3xl'>I am a web developer</h3>
+          <img className='w-4/5' src="./images/punpun.png" />
         </Section>
 
         <Section>
           <SectionTitle title={"About Me"} />
-          <p className='text-xs'>{data.about_text}</p>
+          <p className='text-xs md:text-sm'>{data.about_text}</p>
           <div className="w-full flex justify-end">
-            <button className="w-40 border border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400">
+            <button className="w-40 border border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400 md:text-xl md:py-2">
               <FiDownload />
               Resume
             </button>
@@ -83,27 +83,27 @@ function App() {
           <SectionTitle title={"Experience"} />
 
           <div className='w-full flex flex-col gap-4'>
-            <h3 className='text-xl'>Professional</h3>
+            <h3 className='text-xl md:text-2xl'>Professional</h3>
 
-            <ul className="flex flex-col gap-8 w-fit">
+            <ul className="flex flex-col gap-8 w-fit md:w-full">
               {data.experience > [] ?
                 data.experience.map((experience, key) => (
-                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl shadow-md'>
+                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl shadow-md md:px-12'>
                     <div className='flex flex-col gap-4'>
-                      <img className='w-20 h-20 self-center' src={experience.img} />
+                      <img className='w-20 h-20 self-center md:w-32 md:h-32' src={experience.img} />
                       <div className='flex flex-col gap-2'>
-                        <p className='text-sm md:text-base'>{experience.title} At {experience.company}</p>
+                        <p className='text-sm md:text-lg'>{experience.title} At {experience.company}</p>
                         <p className='text-xs md:text-base'>{experience.start_date} - {experience.end_date}</p>
-                        <p className='text-xs'>{experience.technologies}</p>
+                        <p className='text-xs md:text-base'>{experience.technologies}</p>
                       </div>
                     </div>
 
                     <div className='flex flex-col'>
-                      <h4 className='text-sm'>Responsabilities</h4>
+                      <h4 className='text-sm md:text-lg'>Responsabilities</h4>
                       <ul className='flex flex-col list-disc pl-5'>
                         {experience.responsabilities > [] ?
                           experience.responsabilities.map((responsability, key) => (
-                            <li className='text-xs' key={key}>{responsability}</li>
+                            <li className='text-xs md:text-base' key={key}>{responsability}</li>
                           ))
                           :
                           <></>
@@ -123,14 +123,15 @@ function App() {
 
           <div className='w-full flex flex-col gap-4'>
             <h3 className='text-xl'>Education</h3>
-            <ul className='flex flex-col gap-4 w-fit'>
+            <ul className='flex flex-col gap-4 w-fit md:w-full '>
+              
               {data.education > [] ?
                 data.education.map((education, key) => (
-                  <li key={key} className='flex flex-col p-4 justify-center items-center gap-4 border border-gray-500 rounded-xl shadow-md'>
-                    <img className='w-20 h-20' src={education.img} />
+                  <li key={key} className='flex flex-col p-4 justify-center items-center gap-4 border border-gray-500 rounded-xl shadow-md md:flex-row'>
+                    <img className='w-20 h-20 md:w-28 md:h-28' src={education.img} />
                     <div>
-                      <p className='text-sm'>{education.field} At {education.school}</p>
-                      <p className='text-xs'>{education.start_date} - {education.end_date}</p>
+                      <p className='text-sm md:text-lg'>{education.field} At {education.school}</p>
+                      <p className='text-xs md:text-base'>{education.start_date} - {education.end_date}</p>
                     </div>
                   </li>
                 ))
@@ -145,18 +146,18 @@ function App() {
         <Section>
           <SectionTitle title={"Projects"} />
 
-          <ul className='flex flex-col gap-12'>
+          <ul className='flex flex-col gap-12 md:gap-16'>
             {
               data.projects &&
               data.projects.map((project) => (
-                <li className='flex flex-col gap-4'>
-                  <h3 className='text-base'>{project.name}</h3>
-                  <p className='text-xs'>{project.technologies}</p>
+                <li className='flex flex-col gap-4 md:gap-6'>
+                  <h3 className='text-base md:text-2xl'>{project.name}</h3>
+                  <p className='text-xs md:text-base'>{project.technologies}</p>
                   <img src={`/images/${project.imgName}.png`} />
 
                   <div className='flex flex-row justify-between items-center text-sm'>
-                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2'>Live Project</a>
-                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2'>Repository</a>
+                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8'>Live Project</a>
+                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8'>Repository</a>
                   </div>
 
                 </li>
@@ -168,29 +169,29 @@ function App() {
 
         <Section>
           <SectionTitle title={"Contacts"} />
-          <ul className='flex flex-col gap-6 items-start'>
+          <ul className='flex flex-col gap-6 items-start md:w-full md:mb-12 md:gap-8'>
 
-            <li className='flex flex-row gap-2 justify-center items-center'>
-              <MdOutlineEmail className='text-2xl' />
+            <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
+              <MdOutlineEmail className='text-2xl md:text-5xl' />
               <div>
-                <h3 className='text-base'>Email:</h3>
-                <p className='text-sm'>lucas.gabriel.lr2112@gmail.com</p>
+                <h3 className='text-base md:text-xl'>Email:</h3>
+                <p className='text-sm md:text-lg'>lucas.gabriel.lr2112@gmail.com</p>
               </div>
             </li>
 
-            <li className='flex flex-row gap-2 justify-center items-center'>
-              <SlSocialInstagram className='text-2xl' />
+            <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
+              <SlSocialInstagram className='text-2xl md:text-5xl' />
               <div>
-                <h3 className='text-base'>Instagram:</h3>
-                <p className='text-sm'>@lucasgabriellanarosa</p>
+                <h3 className='text-base md:text-xl'>Instagram:</h3>
+                <p className='text-sm md:text-lg'>@lucasgabriellanarosa</p>
               </div>
             </li>
 
-            <li className='flex flex-row gap-2 justify-center items-center'>
-              <IoCallOutline className='text-2xl' />
+            <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
+              <IoCallOutline className='text-2xl md:text-5xl' />
               <div>
-                <h3 className='text-base'>Call:</h3>
-                <p className='text-sm'>+55 33 99821-2351</p>
+                <h3 className='text-base md:text-xl'>Call:</h3>
+                <p className='text-sm md:text-lg'>+55 33 99821-2351</p>
               </div>
             </li>
           </ul>

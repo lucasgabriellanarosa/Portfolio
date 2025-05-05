@@ -1,5 +1,5 @@
 export const SectionTitle = ({title}) => {
   return (
-    <h2 className='text-xl md:text-2xl w-full'>{title}</h2>
+    <h2 className='text-xl md:text-3xl w-full'>{title}</h2>
 )
 }
