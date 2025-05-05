@@ -6,6 +6,9 @@ import { Section } from './components/Section';
 import { NavItem } from './components/NavItem';
 import { SectionTitle } from './components/SectionTitle';
 import { FiDownload } from "react-icons/fi";
+import { MdOutlineEmail } from 'react-icons/md';
+import { SlSocialInstagram } from 'react-icons/sl';
+import { IoCallOutline } from 'react-icons/io5';
 
 function App() {
 
@@ -59,7 +62,7 @@ function App() {
 
       <main className='overflow-y-auto flex flex-1 flex-col items-center'>
 
-        <Section>
+        <Section className="">
           <h2 className='text-2xl md:text-4xl'>Lucas Gabriel L.R</h2>
           <h3 className='text-xl md:text-2xl'>I am a web developer</h3>
           <img src="./images/punpun.png" />
@@ -85,7 +88,7 @@ function App() {
             <ul className="flex flex-col gap-8 w-fit">
               {data.experience > [] ?
                 data.experience.map((experience, key) => (
-                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl'>
+                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl shadow-md'>
                     <div className='flex flex-col gap-4'>
                       <img className='w-20 h-20 self-center' src={experience.img} />
                       <div className='flex flex-col gap-2'>
@@ -96,11 +99,11 @@ function App() {
                     </div>
 
                     <div className='flex flex-col'>
-                      <h4>Responsabilities</h4>
+                      <h4 className='text-sm'>Responsabilities</h4>
                       <ul className='flex flex-col list-disc pl-5'>
                         {experience.responsabilities > [] ?
                           experience.responsabilities.map((responsability, key) => (
-                            <li className='text-sm' key={key}>{responsability}</li>
+                            <li className='text-xs' key={key}>{responsability}</li>
                           ))
                           :
                           <></>
@@ -111,6 +114,7 @@ function App() {
                 ))
 
                 :
+
                 <></>
               }
             </ul>
@@ -122,11 +126,11 @@ function App() {
             <ul className='flex flex-col gap-4 w-fit'>
               {data.education > [] ?
                 data.education.map((education, key) => (
-                  <li key={key} className='flex flex-row p-4 justify-center items-center gap-8 border border-gray-500 rounded-xl'>
-                    <img className='w-12 h-12' src={education.img} />
-                    <div className='text-base'>
-                      <p className='text-base'>{education.field} At {education.school}</p>
-                      <p>{education.start_date} - {education.end_date}</p>
+                  <li key={key} className='flex flex-col p-4 justify-center items-center gap-4 border border-gray-500 rounded-xl shadow-md'>
+                    <img className='w-20 h-20' src={education.img} />
+                    <div>
+                      <p className='text-sm'>{education.field} At {education.school}</p>
+                      <p className='text-xs'>{education.start_date} - {education.end_date}</p>
                     </div>
                   </li>
                 ))
@@ -136,6 +140,60 @@ function App() {
               }
             </ul>
           </div>
+        </Section>
+
+        <Section>
+          <SectionTitle title={"Projects"} />
+
+          <ul className='flex flex-col gap-12'>
+            {
+              data.projects &&
+              data.projects.map((project) => (
+                <li className='flex flex-col gap-4'>
+                  <h3 className='text-base'>{project.name}</h3>
+                  <p className='text-xs'>{project.technologies}</p>
+                  <img src={`/images/${project.imgName}.png`} />
+
+                  <div className='flex flex-row justify-between items-center text-sm'>
+                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2'>Live Project</a>
+                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2'>Repository</a>
+                  </div>
+
+                </li>
+              ))
+            }
+          </ul>
+
+        </Section>
+
+        <Section>
+          <SectionTitle title={"Contacts"} />
+          <ul className='flex flex-col gap-6 items-start'>
+
+            <li className='flex flex-row gap-2 justify-center items-center'>
+              <MdOutlineEmail className='text-2xl' />
+              <div>
+                <h3 className='text-base'>Email:</h3>
+                <p className='text-sm'>lucas.gabriel.lr2112@gmail.com</p>
+              </div>
+            </li>
+
+            <li className='flex flex-row gap-2 justify-center items-center'>
+              <SlSocialInstagram className='text-2xl' />
+              <div>
+                <h3 className='text-base'>Instagram:</h3>
+                <p className='text-sm'>@lucasgabriellanarosa</p>
+              </div>
+            </li>
+
+            <li className='flex flex-row gap-2 justify-center items-center'>
+              <IoCallOutline className='text-2xl' />
+              <div>
+                <h3 className='text-base'>Call:</h3>
+                <p className='text-sm'>+55 33 99821-2351</p>
+              </div>
+            </li>
+          </ul>
         </Section>
 
       </main>
