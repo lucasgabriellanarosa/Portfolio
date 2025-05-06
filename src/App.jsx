@@ -72,10 +72,10 @@ function App() {
           <SectionTitle title={"About Me"} />
           <p className='text-xs md:text-sm'>{data.about_text}</p>
           <div className="w-full flex justify-end">
-            <button className="w-40 border border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400 md:text-xl md:py-2">
+            <a href="./Lucas Gabriel de Lana Rosa - Front End Developer.docx" download="Lucas Gabriel de Lana Rosa - Front End Developer.docx" className="w-40 border border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400 md:text-xl md:py-2">
               <FiDownload />
               Resume
-            </button>
+            </a>
           </div>
         </Section>
 
