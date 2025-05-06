@@ -39,7 +39,7 @@ function App() {
   return (
     <div className='flex flex-row h-screen font-oldenburg pb-8'>
 
-      <header className='hidden lg:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 px-4  text-textGray'>
+      <header className='hidden lg:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 min-w-fit px-8 text-textGray'>
 
         <div className='flex flex-col items-center gap-2'>
           <img src="./images/billybat.png" className='w-36' />
@@ -60,12 +60,12 @@ function App() {
 
       </header>
 
-      <main className='flex flex-col items-center '>
+      <main className='flex flex-col items-center overflow-y-auto'>
 
         <Section>
           <h2 className='text-2xl md:text-5xl'>Lucas Gabriel L.R</h2>
           <h3 className='text-xl md:text-3xl'>I am a web developer</h3>
-          <img className='w-4/5' src="./images/punpun.png" />
+          <img className='w-4/5 max-w-[400px]' src="./images/punpun.png" />
         </Section>
 
         <Section>
@@ -85,11 +85,11 @@ function App() {
           <div className='w-full flex flex-col gap-4'>
             <h3 className='text-xl md:text-2xl'>Professional</h3>
 
-            <ul className="flex flex-col gap-8 w-fit md:w-full">
+            <ul className="flex flex-col gap-8 w-fit md:w-full lg:grid lg:grid-cols-2">
               {data.experience > [] ?
                 data.experience.map((experience, key) => (
-                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl shadow-md md:px-12'>
-                    <div className='flex flex-col gap-4'>
+                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl shadow-md md:px-12 lg:justify-start'>
+                    <div className='flex flex-col gap-4 lg:flex-row'>
                       <img className='w-20 h-20 self-center md:w-32 md:h-32' src={experience.img} />
                       <div className='flex flex-col gap-2'>
                         <p className='text-sm md:text-lg'>{experience.title} At {experience.company}</p>
@@ -123,11 +123,11 @@ function App() {
 
           <div className='w-full flex flex-col gap-4'>
             <h3 className='text-xl'>Education</h3>
-            <ul className='flex flex-col gap-4 w-fit md:w-full '>
+            <ul className='flex flex-col gap-4 w-full '>
               
               {data.education > [] ?
                 data.education.map((education, key) => (
-                  <li key={key} className='flex flex-col p-4 justify-center items-center gap-4 border border-gray-500 rounded-xl shadow-md md:flex-row'>
+                  <li key={key} className='flex flex-col p-4 justify-center items-center gap-4 border border-gray-500 rounded-xl shadow-md md:flex-row lg:max-w-[750px]'>
                     <img className='w-20 h-20 md:w-28 md:h-28' src={education.img} />
                     <div>
                       <p className='text-sm md:text-lg'>{education.field} At {education.school}</p>
@@ -141,6 +141,7 @@ function App() {
               }
             </ul>
           </div>
+
         </Section>
 
         <Section>
@@ -156,8 +157,8 @@ function App() {
                   <img src={`/images/${project.imgName}.png`} />
 
                   <div className='flex flex-row justify-between items-center text-sm'>
-                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8'>Live Project</a>
-                    <a href='#' target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8'>Repository</a>
+                    <a href={project.live} target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8 hover:cursor-pointer hover:text-white hover:bg-gray-400'>Live Project</a>
+                    <a href={project.repository} target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8 hover:cursor-pointer hover:text-white hover:bg-gray-400'>Repository</a>
                   </div>
 
                 </li>
