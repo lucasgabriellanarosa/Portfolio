@@ -45,7 +45,7 @@ function App() {
     >
 
       <header
-        className={`hidden fixed z-50 px-4 py-3 shadow-md transition-all duration-300 md:flex flex-row justify-between items-center ${isScrolled
+        className={`hidden fixed z-50 px-6 py-2 shadow-md transition-all duration-300 md:flex flex-row justify-between items-center ${isScrolled
           ? "w-full left-0 translate-x-0 rounded-none bg-teal-950 top-0"
           : "w-4/5 left-1/2 -translate-x-1/2 rounded-lg bg-teal-950/80 top-5"
           }`}
@@ -70,7 +70,7 @@ function App() {
           </a>
         </nav>
       </header>
-      
+
       <section
         className='relative bg-linear-to-b from-cyan-600 to-teal-950 min-h-svh flex flex-col justify-center items-center'
       >
@@ -83,21 +83,21 @@ function App() {
       </section>
 
       <section
-        className='bg-sky-100 p-4 flex flex-col gap-4'
+        className='bg-sky-100 p-4 flex flex-col gap-4 md:px-8'
       >
         <h2
-          className='font-graduate text-lg font-bold'
+          className='font-graduate text-lg font-bold md:text-xl'
         >About</h2>
 
         <p
-          className='text-sm'
+          className='text-sm md:text-base'
         >{data.about_text}</p>
 
         <div className="relative inline-block self-end">
-          <span className="absolute inset-0 translate-x-1 translate-y-1 bg-teal-800 rounded-md z-0 transition-transform duration-300 ease-in-out"></span>
+          <span className="absolute inset-0 translate-x-1 translate-y-1 bg-teal-800 rounded-md z-0 transition-transform duration-300 ease-in-out md:translate-2"></span>
           <a
             href="./Lucas Gabriel de Lana Rosa - Desenvolvedor Front End.docx" download="Lucas Gabriel de Lana Rosa - Desenvolvedor Front End.docx"
-            className="relative inline-flex items-center justify-center px-6 py-2 bg-sky-100 text-teal-900 border border-teal-900 rounded-md z-10 hover:translate-x-0 hover:translate-y-0 transition-transform duration-300 ease-in-out"
+            className="relative inline-flex items-center justify-center px-6 py-2 bg-sky-100 text-teal-900 border border-teal-900 rounded-md z-10 hover:translate-x-0 hover:translate-y-0 transition-transform duration-300 ease-in-out md:text-lg"
           >
             Get my resume
           </a>
@@ -109,52 +109,27 @@ function App() {
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e0f2fe" fill-opacity="1" d="M0,128L60,154.7C120,181,240,235,360,245.3C480,256,600,224,720,186.7C840,149,960,107,1080,106.7C1200,107,1320,149,1380,170.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
 
-        <div className='px-4 py-8 text-white flex flex-col gap-4'>
+        <div className='px-4 py-8 text-white flex flex-col gap-4 md:px-8'>
           <h2
-            className='font-graduate text-lg font-bold'
+            className='font-graduate text-lg font-bold md:text-xl'
           >Skills</h2>
 
           <div
-            className='flex flex-wrap gap-2'
+            className='flex flex-col gap-2'
           >
             <h3
-              className='font-graduate text-base'
+              className='font-graduate text-base md:text-lg'
             >Frontend</h3>
 
             <ul
-              className='flex flex-row gap-2'
+              className='flex flex-wrap gap-2'
             >
               {
                 data.skills &&
                 data.skills.frontend.map((skill, key) => (
                   <li
                     key={key}
-                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
-                  >
-                    {skill.name}
-                  </li>
-                ))
-              }
-            </ul>
-
-          </div>
-
-          <div
-            className='flex flex-wrap gap-2'
-          >
-            <h3
-              className='font-graduate text-base'
-            >Styling & Design</h3>
-
-            <ul
-              className='flex flex-row gap-2'
-            >
-              {
-                data.skills &&
-                data.skills.styling.map((skill, key) => (
-                  <li
-                    key={key}
-                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm md:text-base md:px-3'
                   >
                     {skill.name}
                   </li>
@@ -168,7 +143,32 @@ function App() {
             className='flex flex-col gap-2'
           >
             <h3
-              className='font-graduate text-base'
+              className='font-graduate text-base md:text-lg'
+            >Styling & Design</h3>
+
+            <ul
+              className='flex flex-wrap gap-2'
+            >
+              {
+                data.skills &&
+                data.skills.styling.map((skill, key) => (
+                  <li
+                    key={key}
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm md:text-base md:px-3'
+                  >
+                    {skill.name}
+                  </li>
+                ))
+              }
+            </ul>
+
+          </div>
+
+          <div
+            className='flex flex-col gap-2'
+          >
+            <h3
+              className='font-graduate text-base md:text-lg'
             >Back End</h3>
 
             <ul
@@ -179,7 +179,7 @@ function App() {
                 data.skills.backend.map((skill, key) => (
                   <li
                     key={key}
-                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm md:text-base md:px-3'
                   >
                     {skill.name}
                   </li>
@@ -193,7 +193,7 @@ function App() {
             className='flex flex-col gap-2'
           >
             <h3
-              className='font-graduate text-base'
+              className='font-graduate text-base md:text-lg'
             >Others</h3>
 
             <ul
@@ -204,7 +204,7 @@ function App() {
                 data.skills.others.map((skill, key) => (
                   <li
                     key={key}
-                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm md:text-base md:px-3'
                   >
                     {skill.name}
                   </li>
@@ -221,59 +221,63 @@ function App() {
       </section>
 
       <section
-        className='bg-linear-to-b from-teal-950 to-cyan-600 p-4 font-graduate flex flex-col gap-8'
+        className='bg-linear-to-b from-teal-950 to-cyan-600 p-4 font-graduate flex flex-col gap-8 md:px-8'
       >
 
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 self-center'>
 
-          <h2 className='font-graduate text-lg font-bold text-white'>Experiences</h2>
+          <h2 className='font-graduate text-lg font-bold text-white md:text-xl'>Experiences</h2>
 
-          <h3 className='font-graduate text-base text-white'>Professional</h3>
+          <h3 className='font-graduate text-base text-white md:text-lg'>Professional</h3>
 
-          {
-            data.experience &&
-            data.experience.slice().reverse().map((experience, key) => (
-              <li key={key} className='flex flex-col py-2 px-4 justify-center gap-4 border border-white text-white rounded-xl shadow-md md:px-12 lg:justify-start'>
-                <div className='flex flex-col gap-2 lg:flex-row'>
-                  <img className='w-20 h-20 self-center md:w-32 md:h-32' src={experience.img} />
-                  <div className='flex flex-col gap-2'>
-                    <p className='text-sm md:text-lg'>{experience.title} At {experience.company}</p>
-                    <p className='text-xs md:text-base'>{experience.start_date} - {experience.end_date}</p>
-                    <p className='text-xs md:text-base'>{experience.technologies}</p>
+          <ul className='flex flex-col gap-4'>
+            {
+              data.experience &&
+              data.experience.slice().reverse().map((experience, key) => (
+                <li key={key} className='flex flex-col py-2 px-4 justify-center gap-4 border border-white text-white rounded-xl shadow-md md:px-8 md:py-4 md:max-w-[600px] lg:justify-start'>
+                  <div className='flex flex-col gap-2 lg:flex-row'>
+                    <img className='w-20 h-20 self-center md:w-32 md:h-32' src={experience.img} />
+                    <div className='flex flex-col gap-2'>
+                      <p className='text-sm md:text-lg'>{experience.title} At {experience.company}</p>
+                      <p className='text-xs md:text-base'>{experience.start_date} - {experience.end_date}</p>
+                      <p className='text-xs md:text-base'>{experience.technologies}</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className='flex flex-col'>
-                  <h4 className='text-sm md:text-lg'>Responsabilities</h4>
-                  <ul className='flex flex-col list-disc pl-5'>
-                    {experience.responsabilities > [] ?
-                      experience.responsabilities.map((responsability, key) => (
-                        <li className='text-xs md:text-base' key={key}>{responsability}</li>
-                      ))
-                      :
-                      <></>
-                    }
-                  </ul>
-                </div>
-              </li>
-            ))
-          }
+                  <div className='flex flex-col'>
+                    <h4 className='text-sm md:text-lg'>Responsabilities</h4>
+                    <ul className='flex flex-col list-disc pl-5'>
+                      {experience.responsabilities > [] ?
+                        experience.responsabilities.map((responsability, key) => (
+                          <li className='text-xs md:text-base' key={key}>{responsability}</li>
+                        ))
+                        :
+                        <></>
+                      }
+                    </ul>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
 
-          <h3 className='font-graduate text-base text-white'>Education</h3>
+          <h3 className='font-graduate text-base text-white md:text-lg'>Education</h3>
 
-          {
-            data.education &&
-            data.education.map((education, key) => (
-              <li key={key} className='flex flex-col py-2 px-4 justify-center gap-2 border border-white text-white rounded-xl shadow-md md:px-12 lg:justify-start'>
-                <img className='w-20 h-20 self-center md:w-32 md:h-32' src={education.img} />
-                <div className='flex flex-col gap-1'>
-                  <p className='text-sm md:text-lg'>{education.field} At {education.school}</p>
-                  <p className='text-xs md:text-base'>{education.start_date} - {education.end_date}</p>
-                  <p className='text-xs md:text-base'>{education.technologies}</p>
-                </div>
-              </li>
-            ))
-          }
+          <ul className='flex flex-col gap-4'>
+            {
+              data.education &&
+              data.education.map((education, key) => (
+                <li key={key} className='flex flex-col py-2 px-4 justify-center gap-2 border border-white text-white rounded-xl shadow-md md:px-8 md:flex-row md:items-center md:max-w-[600px] md:gap-6 lg:justify-start'>
+                  <img className='w-20 h-20 self-center md:w-32 md:h-32' src={education.img} />
+                  <div className='flex flex-col gap-1'>
+                    <p className='text-sm md:text-lg'>{education.field} At {education.school}</p>
+                    <p className='text-xs md:text-base'>{education.start_date} - {education.end_date}</p>
+                    <p className='text-xs md:text-base'>{education.technologies}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
 
         </div>
 
