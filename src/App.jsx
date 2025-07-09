@@ -53,19 +53,19 @@ function App() {
         <img src="/images/logo.png" className='h-20' />
 
         <nav className="flex gap-4 justify-center text-lg text-blue-100">
-          <a href="#" className="hover:text-blue-300">
+          <a href="#" className="hover:text-teal-300">
             About
           </a>
-          <a href="#" className="hover:text-blue-300">
+          <a href="#" className="hover:text-teal-300">
             Skills
           </a>
-          <a href="#" className="hover:text-blue-300">
+          <a href="#" className="hover:text-teal-300">
             Projects
           </a>
-          <a href="#" className="hover:text-blue-300">
+          <a href="#" className="hover:text-teal-300">
             Contact
           </a>
-          <a href="#" className="hover:text-blue-300">
+          <a href="#" className="hover:text-teal-300">
             Resume
           </a>
         </nav>
@@ -100,7 +100,7 @@ function App() {
             <span className="absolute inset-0 translate-x-1 translate-y-1 bg-teal-800 rounded-md z-0 transition-transform duration-300 ease-in-out md:translate-2"></span>
             <a
               href="./Lucas Gabriel de Lana Rosa - Desenvolvedor Front End.docx" download="Lucas Gabriel de Lana Rosa - Desenvolvedor Front End.docx"
-              className="relative inline-flex items-center justify-center px-6 py-2 bg-sky-100 text-teal-900 border border-teal-900 rounded-md z-10 hover:translate-x-0 hover:translate-y-0 transition-transform duration-300 ease-in-out md:text-lg"
+              className="relative inline-flex items-center justify-center px-6 py-2 bg-sky-100 text-teal-900 border border-teal-900 rounded-md z-10 hover:translate-x-0 hover:translate-y-0 transition-transform duration-300 ease-in-out md:text-lg hover:bg-teal-600 hover:text-sky-100"
             >
               Get my resume
             </a>
