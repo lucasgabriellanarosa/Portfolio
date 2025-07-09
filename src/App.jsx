@@ -283,20 +283,20 @@ function App() {
 
         <div className="flex flex-col gap-4 text-white">
 
-          <h2 className='font-graduate text-lg font-bold'>Projects</h2>
+          <h2 className='font-graduate text-lg font-bold md:text-xl'>Projects</h2>
 
           <ul className='flex flex-col gap-12 md:gap-16'>
             {
               data.projects &&
               data.projects.map((project) => (
                 <li className='flex flex-col gap-2 md:gap-4'>
-                  <h3 className='text-base md:text-2xl'>{project.name}</h3>
+                  <h3 className='text-base md:text-lg'>{project.name}</h3>
                   <p className='text-xs md:text-base'>{project.technologies}</p>
                   <img src={`/images/${project.imgName}.png`} />
 
                   <div className='flex flex-row justify-between items-center text-sm'>
-                    <a href={project.live} target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8 hover:cursor-pointer hover:text-white hover:bg-gray-400'>Live Project</a>
-                    <a href={project.repository} target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8 hover:cursor-pointer hover:text-white hover:bg-gray-400'>Repository</a>
+                    <a href={project.live} target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8 hover:cursor-pointer hover:bg-teal-500'>Live Project</a>
+                    <a href={project.repository} target='_blank' className='flex border justify-center items-center rounded-2xl px-4 py-2 md:text-lg md:px-8 hover:cursor-pointer hover:bg-teal-500'>Repository</a>
                   </div>
 
                 </li>
@@ -308,10 +308,10 @@ function App() {
 
         <ul className='flex font-sans flex-col gap-4 text-white items-start md:w-full md:mb-12 md:gap-8 pb-8'>
 
-          <h2 className='text-lg font-bold font-graduate'>Projects</h2>
+          <h2 className='text-lg font-bold font-graduate md:text-xl'>Projects</h2>
 
           <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
-            <MdOutlineEmail className='text-3xl md:text-5xl' />
+            <MdOutlineEmail className='text-3xl md:text-4xl' />
             <div>
               <h3 className='text-base md:text-xl'>Email:</h3>
               <p className='text-sm md:text-lg'>lucas.gabriel.lr2112@gmail.com</p>
@@ -319,7 +319,7 @@ function App() {
           </li>
 
           <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
-            <SlSocialInstagram className='text-3xl md:text-5xl' />
+            <SlSocialInstagram className='text-3xl md:text-4xl' />
             <div>
               <h3 className='text-base md:text-xl'>Instagram:</h3>
               <p className='text-sm md:text-lg'>@lucasgabriellanarosa</p>
@@ -327,7 +327,7 @@ function App() {
           </li>
 
           <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
-            <IoCallOutline className='text-3xl md:text-5xl' />
+            <IoCallOutline className='text-3xl md:text-4xl' />
             <div>
               <h3 className='text-base md:text-xl'>Call:</h3>
               <p className='text-sm md:text-lg'>+55 33 99821-2351</p>
