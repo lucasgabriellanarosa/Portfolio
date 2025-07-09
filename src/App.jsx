@@ -2,10 +2,6 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import app from "./firebase"
 import { getDatabase, ref, onValue } from "firebase/database";
-import { Section } from './components/Section';
-import { NavItem } from './components/NavItem';
-import { SectionTitle } from './components/SectionTitle';
-import { FiDownload } from "react-icons/fi";
 import { MdOutlineEmail } from 'react-icons/md';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { IoCallOutline } from 'react-icons/io5';
@@ -37,121 +33,224 @@ function App() {
   }, [])
 
   return (
-    <div className='flex flex-row h-screen font-oldenburg pb-8'>
+    <div
+    >
 
-      <header className='hidden lg:flex md:flex-col items-center justify-between h-screen bg-gray-100 py-4 min-w-fit px-8 text-textGray'>
+      <section
+        className='relative bg-linear-to-b from-cyan-600 to-teal-950 min-h-screen flex flex-col justify-center items-center'
+      >
 
-        <div className='flex flex-col items-center gap-2'>
-          <img src="./images/billybat.png" className='w-36' />
-          <h1 className='text-2xl'>Lucas Gabriel L.R</h1>
+        <img src="/images/logo.png" />
+
+        <svg
+          className='absolute bottom-0'
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e0f2fe" fill-opacity="1" d="M0,128L60,154.7C120,181,240,235,360,245.3C480,256,600,224,720,186.7C840,149,960,107,1080,106.7C1200,107,1320,149,1380,170.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+      </section>
+
+      <section
+        className='bg-sky-100 p-4 flex flex-col gap-4'
+      >
+        <h2
+          className='font-graduate text-lg font-bold'
+        >About</h2>
+
+        <p
+          className='text-sm'
+        >{data.about_text}</p>
+
+        <div className="relative inline-block self-end">
+          <span className="absolute inset-0 translate-x-1 translate-y-1 bg-teal-800 rounded-md z-0 transition-transform duration-300 ease-in-out"></span>
+          <a
+            href="./Lucas Gabriel de Lana Rosa - Desenvolvedor Front End.docx" download="Lucas Gabriel de Lana Rosa - Desenvolvedor Front End.docx"
+            className="relative inline-flex items-center justify-center px-6 py-2 bg-sky-100 text-teal-900 border border-teal-900 rounded-md z-10 hover:translate-x-0 hover:translate-y-0 transition-transform duration-300 ease-in-out"
+          >
+            Get my resume
+          </a>
+        </div>
+      </section>
+
+      <section
+        className='bg-linear-to-b from-cyan-600 to-teal-900'>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e0f2fe" fill-opacity="1" d="M0,128L60,154.7C120,181,240,235,360,245.3C480,256,600,224,720,186.7C840,149,960,107,1080,106.7C1200,107,1320,149,1380,170.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+
+        <div className='px-4 py-8 text-white flex flex-col gap-4'>
+          <h2
+            className='font-graduate text-lg font-bold'
+          >Skills</h2>
+
+          <div
+            className='flex flex-wrap gap-2'
+          >
+            <h3
+              className='font-graduate text-base'
+            >Frontend</h3>
+
+            <ul
+              className='flex flex-row gap-2'
+            >
+              {
+                data.skills &&
+                data.skills.frontend.map((skill, key) => (
+                  <li
+                    key={key}
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                  >
+                    {skill.name}
+                  </li>
+                ))
+              }
+            </ul>
+
+          </div>
+
+          <div
+            className='flex flex-wrap gap-2'
+          >
+            <h3
+              className='font-graduate text-base'
+            >Styling & Design</h3>
+
+            <ul
+              className='flex flex-row gap-2'
+            >
+              {
+                data.skills &&
+                data.skills.styling.map((skill, key) => (
+                  <li
+                    key={key}
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                  >
+                    {skill.name}
+                  </li>
+                ))
+              }
+            </ul>
+
+          </div>
+
+          <div
+            className='flex flex-col gap-2'
+          >
+            <h3
+              className='font-graduate text-base'
+            >Back End</h3>
+
+            <ul
+              className='flex flex-wrap gap-2'
+            >
+              {
+                data.skills &&
+                data.skills.backend.map((skill, key) => (
+                  <li
+                    key={key}
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                  >
+                    {skill.name}
+                  </li>
+                ))
+              }
+            </ul>
+
+          </div>
+
+          <div
+            className='flex flex-col gap-2'
+          >
+            <h3
+              className='font-graduate text-base'
+            >Others</h3>
+
+            <ul
+              className='flex flex-wrap gap-2'
+            >
+              {
+                data.skills &&
+                data.skills.others.map((skill, key) => (
+                  <li
+                    key={key}
+                    className='bg-blue-50 text-black font-bold uppercase font-graduate text-xs px-2 py-1 rounded-sm'
+                  >
+                    {skill.name}
+                  </li>
+                ))
+              }
+            </ul>
+
+          </div>
+
         </div>
 
-        <ul className='flex flex-col gap-4'>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042f2e" fill-opacity="1" d="M0,192L0,192L110.8,192L110.8,96L221.5,96L221.5,192L332.3,192L332.3,128L443.1,128L443.1,256L553.8,256L553.8,64L664.6,64L664.6,192L775.4,192L775.4,224L886.2,224L886.2,0L996.9,0L996.9,96L1107.7,96L1107.7,192L1218.5,192L1218.5,96L1329.2,96L1329.2,64L1440,64L1440,320L1329.2,320L1329.2,320L1218.5,320L1218.5,320L1107.7,320L1107.7,320L996.9,320L996.9,320L886.2,320L886.2,320L775.4,320L775.4,320L664.6,320L664.6,320L553.8,320L553.8,320L443.1,320L443.1,320L332.3,320L332.3,320L221.5,320L221.5,320L110.8,320L110.8,320L0,320L0,320Z"></path></svg>
 
-          <NavItem section={"Home"} />
-          <NavItem section={"About"} />
-          <NavItem section={"Experience"} />
-          <NavItem section={"Projects"} />
-          <NavItem section={"Contacts"} />
+      </section>
 
-        </ul>
+      <section
+        className='bg-linear-to-b from-teal-950 to-cyan-600 p-4 font-graduate flex flex-col gap-8'
+      >
 
-        <span className='text-xl'>Copyright © 2025</span>
+        <div className='flex flex-col gap-4'>
 
-      </header>
+          <h2 className='font-graduate text-lg font-bold text-white'>Experiences</h2>
 
-      <main className='flex flex-col items-center overflow-y-auto'>
+          <h3 className='font-graduate text-base text-white'>Professional</h3>
 
-        <Section>
-          <h2 className='text-2xl md:text-5xl'>Lucas Gabriel L.R</h2>
-          <h3 className='text-xl md:text-3xl'>I am a web developer</h3>
-          <img className='w-4/5 max-w-[400px]' src="./images/punpun.png" />
-        </Section>
+          {
+            data.experience &&
+            data.experience.slice().reverse().map((experience, key) => (
+              <li key={key} className='flex flex-col py-2 px-4 justify-center gap-4 border border-white text-white rounded-xl shadow-md md:px-12 lg:justify-start'>
+                <div className='flex flex-col gap-2 lg:flex-row'>
+                  <img className='w-20 h-20 self-center md:w-32 md:h-32' src={experience.img} />
+                  <div className='flex flex-col gap-2'>
+                    <p className='text-sm md:text-lg'>{experience.title} At {experience.company}</p>
+                    <p className='text-xs md:text-base'>{experience.start_date} - {experience.end_date}</p>
+                    <p className='text-xs md:text-base'>{experience.technologies}</p>
+                  </div>
+                </div>
 
-        <Section>
-          <SectionTitle title={"About Me"} />
-          <p className='text-xs md:text-sm'>{data.about_text}</p>
-          <div className="w-full flex justify-end">
-            <a href="./Lucas Gabriel de Lana Rosa - Desenvolvedor Front End" download="Lucas Gabriel de Lana Rosa - Front End Developer.docx" className="w-40 border border-gray-400 rounded-md flex flex-row items-center justify-center gap-2 py-1 hover:cursor-pointer hover:text-white hover:bg-gray-400 md:text-xl md:py-2">
-              <FiDownload />
-              Resume
-            </a>
-          </div>
-        </Section>
+                <div className='flex flex-col'>
+                  <h4 className='text-sm md:text-lg'>Responsabilities</h4>
+                  <ul className='flex flex-col list-disc pl-5'>
+                    {experience.responsabilities > [] ?
+                      experience.responsabilities.map((responsability, key) => (
+                        <li className='text-xs md:text-base' key={key}>{responsability}</li>
+                      ))
+                      :
+                      <></>
+                    }
+                  </ul>
+                </div>
+              </li>
+            ))
+          }
 
-        <Section>
-          <SectionTitle title={"Experience"} />
+          <h3 className='font-graduate text-base text-white'>Education</h3>
 
-          <div className='w-full flex flex-col gap-4'>
-            <h3 className='text-xl md:text-2xl'>Professional</h3>
+          {
+            data.education &&
+            data.education.map((education, key) => (
+              <li key={key} className='flex flex-col py-2 px-4 justify-center gap-2 border border-white text-white rounded-xl shadow-md md:px-12 lg:justify-start'>
+                <img className='w-20 h-20 self-center md:w-32 md:h-32' src={education.img} />
+                <div className='flex flex-col gap-1'>
+                  <p className='text-sm md:text-lg'>{education.field} At {education.school}</p>
+                  <p className='text-xs md:text-base'>{education.start_date} - {education.end_date}</p>
+                  <p className='text-xs md:text-base'>{education.technologies}</p>
+                </div>
+              </li>
+            ))
+          }
 
-            <ul className="flex flex-col gap-8 w-fit md:w-full lg:grid lg:grid-cols-2">
-              {data.experience > [] ?
-                data.experience.map((experience, key) => (
-                  <li key={key} className='flex flex-col p-6 justify-center gap-6 border border-gray-500 rounded-xl shadow-md md:px-12 lg:justify-start'>
-                    <div className='flex flex-col gap-4 lg:flex-row'>
-                      <img className='w-20 h-20 self-center md:w-32 md:h-32' src={experience.img} />
-                      <div className='flex flex-col gap-2'>
-                        <p className='text-sm md:text-lg'>{experience.title} At {experience.company}</p>
-                        <p className='text-xs md:text-base'>{experience.start_date} - {experience.end_date}</p>
-                        <p className='text-xs md:text-base'>{experience.technologies}</p>
-                      </div>
-                    </div>
+        </div>
 
-                    <div className='flex flex-col'>
-                      <h4 className='text-sm md:text-lg'>Responsabilities</h4>
-                      <ul className='flex flex-col list-disc pl-5'>
-                        {experience.responsabilities > [] ?
-                          experience.responsabilities.map((responsability, key) => (
-                            <li className='text-xs md:text-base' key={key}>{responsability}</li>
-                          ))
-                          :
-                          <></>
-                        }
-                      </ul>
-                    </div>
-                  </li>
-                ))
+        <div className="flex flex-col gap-4 text-white">
 
-                :
-
-                <></>
-              }
-            </ul>
-
-          </div>
-
-          <div className='w-full flex flex-col gap-4'>
-            <h3 className='text-xl'>Education</h3>
-            <ul className='flex flex-col gap-4 w-full '>
-              
-              {data.education > [] ?
-                data.education.map((education, key) => (
-                  <li key={key} className='flex flex-col p-4 justify-center items-center gap-4 border border-gray-500 rounded-xl shadow-md md:flex-row lg:max-w-[750px]'>
-                    <img className='w-20 h-20 md:w-28 md:h-28' src={education.img} />
-                    <div>
-                      <p className='text-sm md:text-lg'>{education.field} At {education.school}</p>
-                      <p className='text-xs md:text-base'>{education.start_date} - {education.end_date}</p>
-                    </div>
-                  </li>
-                ))
-
-                :
-                <></>
-              }
-            </ul>
-          </div>
-
-        </Section>
-
-        <Section>
-          <SectionTitle title={"Projects"} />
+          <h2 className='font-graduate text-lg font-bold'>Projects</h2>
 
           <ul className='flex flex-col gap-12 md:gap-16'>
             {
               data.projects &&
               data.projects.map((project) => (
-                <li className='flex flex-col gap-4 md:gap-6'>
+                <li className='flex flex-col gap-2 md:gap-4'>
                   <h3 className='text-base md:text-2xl'>{project.name}</h3>
                   <p className='text-xs md:text-base'>{project.technologies}</p>
                   <img src={`/images/${project.imgName}.png`} />
@@ -166,39 +265,38 @@ function App() {
             }
           </ul>
 
-        </Section>
+        </div>
 
-        <Section>
-          <SectionTitle title={"Contacts"} />
-          <ul className='flex flex-col gap-6 items-start md:w-full md:mb-12 md:gap-8'>
+        <ul className='flex font-sans flex-col gap-4 text-white items-start md:w-full md:mb-12 md:gap-8 pb-8'>
 
-            <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
-              <MdOutlineEmail className='text-2xl md:text-5xl' />
-              <div>
-                <h3 className='text-base md:text-xl'>Email:</h3>
-                <p className='text-sm md:text-lg'>lucas.gabriel.lr2112@gmail.com</p>
-              </div>
-            </li>
+          <h2 className='text-lg font-bold font-graduate'>Projects</h2>
 
-            <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
-              <SlSocialInstagram className='text-2xl md:text-5xl' />
-              <div>
-                <h3 className='text-base md:text-xl'>Instagram:</h3>
-                <p className='text-sm md:text-lg'>@lucasgabriellanarosa</p>
-              </div>
-            </li>
+          <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
+            <MdOutlineEmail className='text-3xl md:text-5xl' />
+            <div>
+              <h3 className='text-base md:text-xl'>Email:</h3>
+              <p className='text-sm md:text-lg'>lucas.gabriel.lr2112@gmail.com</p>
+            </div>
+          </li>
 
-            <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
-              <IoCallOutline className='text-2xl md:text-5xl' />
-              <div>
-                <h3 className='text-base md:text-xl'>Call:</h3>
-                <p className='text-sm md:text-lg'>+55 33 99821-2351</p>
-              </div>
-            </li>
-          </ul>
-        </Section>
+          <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
+            <SlSocialInstagram className='text-3xl md:text-5xl' />
+            <div>
+              <h3 className='text-base md:text-xl'>Instagram:</h3>
+              <p className='text-sm md:text-lg'>@lucasgabriellanarosa</p>
+            </div>
+          </li>
 
-      </main>
+          <li className='flex flex-row gap-2 justify-center items-center md:gap-4'>
+            <IoCallOutline className='text-3xl md:text-5xl' />
+            <div>
+              <h3 className='text-base md:text-xl'>Call:</h3>
+              <p className='text-sm md:text-lg'>+55 33 99821-2351</p>
+            </div>
+          </li>
+        </ul>
+
+      </section>
 
     </div>
   )
