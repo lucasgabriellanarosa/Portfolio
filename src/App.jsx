@@ -28,19 +28,54 @@ function App() {
     });
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     fetchData()
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [])
 
   return (
     <div
     >
 
+      <header
+        className={`hidden fixed z-50 px-4 py-3 shadow-md transition-all duration-300 md:flex flex-row justify-between items-center ${isScrolled
+          ? "w-full left-0 translate-x-0 rounded-none bg-teal-950 top-0"
+          : "w-4/5 left-1/2 -translate-x-1/2 rounded-lg bg-teal-950/80 top-5"
+          }`}
+      >
+        <img src="/images/logo.png" className='h-20' />
+
+        <nav className="flex gap-4 justify-center text-lg text-blue-100">
+          <a href="#" className="hover:text-blue-300">
+            About
+          </a>
+          <a href="#" className="hover:text-blue-300">
+            Skills
+          </a>
+          <a href="#" className="hover:text-blue-300">
+            Projects
+          </a>
+          <a href="#" className="hover:text-blue-300">
+            Contact
+          </a>
+          <a href="#" className="hover:text-blue-300">
+            Resume
+          </a>
+        </nav>
+      </header>
+      
       <section
         className='relative bg-linear-to-b from-cyan-600 to-teal-950 min-h-svh flex flex-col justify-center items-center'
       >
 
-        <img src="/images/logo.png" />
+        <img src="/images/logo.png" className='w-1/3' />
 
         <svg
           className='absolute bottom-0'
