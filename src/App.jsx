@@ -37,7 +37,7 @@ function App() {
     >
 
       <section
-        className='relative bg-linear-to-b from-cyan-600 to-teal-950 min-h-screen flex flex-col justify-center items-center'
+        className='relative bg-linear-to-b from-cyan-600 to-teal-950 min-h-svh flex flex-col justify-center items-center'
       >
 
         <img src="/images/logo.png" />
