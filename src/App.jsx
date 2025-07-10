@@ -5,6 +5,7 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { MdOutlineEmail } from 'react-icons/md';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { IoCallOutline } from 'react-icons/io5';
+import { motion } from 'framer-motion';
 
 function App() {
 
@@ -40,12 +41,25 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [])
 
+  const fadeInUp = (delay = 0) => ({
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: 'easeOut',
+        delay: delay,
+      }
+    }
+  });
+
   return (
     <div
     >
 
       <header
-        className={`hidden fixed z-50 px-6 py-2 shadow-md transition-all duration-300 md:flex flex-row justify-between items-center ${isScrolled
+        className={`hidden fixed z-50 px-6 py-2 shadow-md transition-all duration-500 md:flex flex-row justify-between items-center ${isScrolled
           ? "w-full left-0 translate-x-0 rounded-none bg-teal-950 top-0"
           : "w-4/5 left-1/2 -translate-x-1/2 rounded-lg bg-teal-950/80 top-5"
           }`}
@@ -73,9 +87,15 @@ function App() {
 
       <section
         className='relative bg-linear-to-b from-cyan-600 to-teal-950 min-h-svh flex flex-col justify-center items-center'
+
       >
 
-        <img src="/images/logo.png" className='w-1/3 lg:max-w-[250px]' />
+        <motion.img src="/images/logo.png" className='w-2/4 md:max-w-[250px] lg:mb-24'
+          variants={fadeInUp(0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        />
 
         <svg
           className='absolute bottom-0'
@@ -86,7 +106,12 @@ function App() {
         className='bg-sky-100 p-4 flex flex-col md:px-8 lg:items-center'
       >
 
-        <div className='flex flex-col gap-4 lg:max-w-[1000px] lg:gap-6'>
+        <motion.div
+          variants={fadeInUp(0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className='flex flex-col gap-4 lg:max-w-[1000px] lg:gap-6'>
 
           <h2
             className='font-graduate text-lg font-bold md:text-xl lg:text-2xl'
@@ -106,8 +131,7 @@ function App() {
             </a>
           </div>
 
-
-        </div>
+        </motion.div>
 
       </section>
 
@@ -118,7 +142,12 @@ function App() {
 
         <div className='px-4 py-8 text-white md:px-8 lg:py-16 lg:flex lg:justify-center'>
 
-          <div className='flex flex-col gap-4 lg:gap-6 lg:w-[1000px]'>
+          <motion.div className='flex flex-col gap-4 lg:gap-6 lg:w-[1000px]'
+
+            variants={fadeInUp(0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}>
 
             <h2
               className='font-graduate text-lg font-bold md:text-xl lg:text-2xl'
@@ -224,8 +253,7 @@ function App() {
 
             </div>
 
-          </div>
-
+          </motion.div>
 
         </div>
 
@@ -237,7 +265,12 @@ function App() {
         className='bg-linear-to-b from-teal-950 to-cyan-600 p-4 font-graduate flex flex-col gap-8 md:px-8 lg:gap-12'
       >
 
-        <div className='flex flex-col gap-4 lg:self-center lg:max-w-[800px] lg:gap-6'>
+        <motion.div className='flex flex-col gap-4 lg:self-center lg:max-w-[800px] lg:gap-6'
+          variants={fadeInUp(0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
 
           <h2 className='font-graduate text-lg font-bold text-white md:text-xl lg:text-2xl'>Experiences</h2>
 
@@ -292,9 +325,14 @@ function App() {
             }
           </ul>
 
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col gap-4 text-white lg:max-w-[800px] lg:self-center">
+        <motion.div className="flex flex-col gap-4 text-white lg:max-w-[800px] lg:self-center"
+          variants={fadeInUp(0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
 
           <h2 className='font-graduate text-lg font-bold md:text-xl lg:text-2xl'>Projects</h2>
 
@@ -317,9 +355,14 @@ function App() {
             }
           </ul>
 
-        </div>
+        </motion.div>
 
-        <ul className='flex font-sans flex-col gap-4 text-white items-start md:w-full md:mb-12 md:gap-8 pb-8 lg:self-center lg:max-w-[800px]'>
+        <motion.ul className='flex font-sans flex-col gap-4 text-white items-start md:w-full md:mb-12 md:gap-8 pb-8 lg:self-center lg:max-w-[800px]'
+          variants={fadeInUp(0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
 
           <h2 className='text-lg font-bold font-graduate md:text-xl lg:text-2xl'>Contacts</h2>
 
@@ -347,7 +390,7 @@ function App() {
             </div>
           </li>
 
-        </ul>
+        </motion.ul>
 
       </section>
 
